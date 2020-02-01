@@ -4,7 +4,8 @@ from pathlib import Path
 with Path('README.md').open() as readme:
     readme = readme.read()
 
-exec(open('urgent/version.py').read())
+with Path('urgent/version.py').open() as version:
+    exec(version.read())
 
 setup(
     name='urgent',
