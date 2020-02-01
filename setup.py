@@ -4,11 +4,11 @@ from pathlib import Path
 with Path('README.md').open() as readme:
     readme = readme.read()
 
-version = "0.1.2"
+exec(open('urgent/version.py').read())
 
 setup(
     name='urgent',
-    version=version if isinstance(version, str) else str(version),
+    version=__version__ if isinstance(__version__, str) else str(__version__),
     keywords="", # keywords of your project that separated by comma ","
     description="", # a conceise introduction of your project
     long_description=readme,
